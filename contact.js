@@ -1,4 +1,3 @@
-
 window.addEventListener('load', () => {
   const loader = document.getElementById('preloader');
   if (loader) {
@@ -72,28 +71,60 @@ if (canvas) {
 }
 
 const form = document.querySelector('.holo-form');
+
 if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
+
         const btn = form.querySelector('.btn-submit');
-        const originalText = btn.querySelector('.btn-text').innerText;
-        const originalIcon = btn.querySelector('i').className;
-      
-        btn.querySelector('.btn-text').innerText = "TRANSMITTING...";
-        btn.querySelector('i').className = "fas fa-spinner fa-spin";
+        const btnText = btn.querySelector('.btn-text');
+        const btnIcon = btn.querySelector('i');
+        const originalText = btnText.innerText;
+        const originalIconClass = btnIcon.className;
+
+        btnText.innerText = "TRANSMITTING...";
+        btnIcon.className = "fas fa-spinner fa-spin";
         btn.style.background = "#4f46e5";
 
-        setTimeout(() => {
-            btn.querySelector('.btn-text').innerText = "SUCCESSFULLY SENT";
-            btn.querySelector('i').className = "fas fa-check";
-            btn.style.background = "#22c55e";
-            form.reset();
+        const formData = new FormData(form);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
 
-            setTimeout(() => {
-                btn.querySelector('.btn-text').innerText = originalText;
-                btn.querySelector('i').className = originalIcon;
-                btn.style.background = "#6366f1";
-            }, 3000);
-        }, 2000);
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            });
+
+            const result = await response.json();
+
+            if (response.status === 200) {
+                btnText.innerText = "SUCCESSFULLY SENT";
+                btnIcon.className = "fas fa-check";
+                btn.style.background = "#22c55e";
+                form.reset();
+            } else {
+                btnText.innerText = "ERROR";
+                btnIcon.className = "fas fa-times";
+                btn.style.background = "#ef4444";
+                console.log(result); 
+            }
+
+        } catch (error) {
+            console.log(error);
+            btnText.innerText = "FAILED";
+            btnIcon.className = "fas fa-exclamation-triangle";
+            btn.style.background = "#ef4444";
+        }
+
+        setTimeout(() => {
+            btnText.innerText = originalText;
+            btnIcon.className = originalIconClass;
+            btn.style.background = "#6366f1";
+        }, 4000);
     });
 }
