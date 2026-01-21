@@ -1,4 +1,4 @@
-const roles = ["Kareem Basha Full Stack Developer", "UI / UX Designer"];
+const roles = ["Full Stack Developer", "UI / UX Designer", "Java Specialist"];
 const typingSpan = document.querySelector(".typing-text");
 let roleIndex = 0;
 let charIndex = 0;
@@ -23,11 +23,23 @@ function typeLoop() {
   setTimeout(typeLoop, isDeleting ? 60 : 100);
 }
 
+document.addEventListener("DOMContentLoaded", typeLoop);
+
 window.addEventListener("scroll", () => {
   const progress = document.querySelector(".scroll-indicator");
   const winScroll = document.documentElement.scrollTop;
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   progress.style.width = (winScroll / height) * 100 + "%";
+});
+
+window.addEventListener('load', () => {
+  const loader = document.getElementById('preloader');
+  if(loader) {
+    setTimeout(() => {
+      loader.style.opacity = '0';
+      setTimeout(() => loader.remove(), 800);
+    }, 800);
+  }
 });
 
 const canvas = document.getElementById('topo-canvas');
@@ -57,8 +69,8 @@ document.addEventListener('mousemove', (e) => {
   
   const card = document.querySelector(".glass-card");
   if(card) {
-    const xAxis = (window.innerWidth / 2 - e.pageX) / 30;
-    const yAxis = (window.innerHeight / 2 - e.pageY) / 30;
+    const xAxis = (window.innerWidth / 2 - e.pageX) / 40;
+    const yAxis = (window.innerHeight / 2 - e.pageY) / 40;
     card.style.transform = `rotateY(${xAxis}deg) rotateX(${-yAxis}deg)`;
   }
 });
@@ -92,7 +104,6 @@ function animate() {
 window.addEventListener('resize', resize);
 resize();
 animate();
-document.addEventListener("DOMContentLoaded", typeLoop);
 
 const tooltip = document.getElementById('tooltip');
 const interactiveElements = document.querySelectorAll('.nav-link, .social-icon, .btn-primary, .btn-ghost');
@@ -115,8 +126,10 @@ interactiveElements.forEach(el => {
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
     if(cursorDot) cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
-    if(cursorOutline) cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
-    if(cursorOutline) cursorOutline.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+    if(cursorOutline) {
+        cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
+        cursorOutline.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+    }
   });
 
   el.addEventListener('mousemove', (e) => {
@@ -130,23 +143,10 @@ interactiveElements.forEach(el => {
     const cursorDot = document.querySelector('.cursor-dot');
     const cursorOutline = document.querySelector('.cursor-outline');
     if(cursorDot) cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
-    if(cursorOutline) cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
-    if(cursorOutline) cursorOutline.style.backgroundColor = 'transparent';
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const cells = document.querySelectorAll(".radar-cell");
-  const labelEl = document.querySelector(".radar-skill");
-  const levelEl = document.querySelector(".radar-level");
-
-  cells.forEach(cell => {
-    cell.addEventListener("mouseenter", () => {
-      const label = cell.getAttribute("data-label") || "";
-      const level = cell.getAttribute("data-level") || "0";
-      if(labelEl) labelEl.textContent = label;
-      if(levelEl) levelEl.textContent = level.padStart(2, "0") + "%";
-    });
+    if(cursorOutline) {
+        cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursorOutline.style.backgroundColor = 'transparent';
+    }
   });
 });
 
@@ -167,14 +167,3 @@ if(cursorDot && cursorOutline) {
     }, { duration: 500, fill: "forwards" });
   });
 }
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("active");
-    }
-  });
-}, { threshold: 0.15 });
-
-const revealElements = document.querySelectorAll('.reveal');
-revealElements.forEach((el) => observer.observe(el));
