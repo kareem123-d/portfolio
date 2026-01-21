@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Kareem Basha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+  <div id="preloader">
+    <div class="loader-content">
+      <div class="scanner"></div>
+      <div class="loading-text">ESTABLISHING CONNECTION...</div>
+    </div>
+  </div>
+
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+
+  <div class="bg-layer">
+    <canvas id="topo-canvas"></canvas>
+    <div class="cyber-overlay"></div>
+  </div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="aboutMe.html">About Me</a></li>
+        <li><a class="nav-link" href="skills.html">Skills</a></li>
+        <li><a class="nav-link" href="projects.html">Projects</a></li>
+        <li><a class="nav-link active" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="contact-wrapper">
+    
+    <div class="contact-container">
+      
+      <div class="contact-info animate-left">
+        <h3 class="subtitle">GET IN TOUCH</h3>
+        <h1 class="title">Let's Build <br> <span class="highlight">The Future</span></h1>
+
+        <div class="info-items">
+          <div class="info-item">
+            <div class="icon-box"><i class="fas fa-envelope"></i></div>
+            <div>
+              <span>Email Me</span>
+              <a href="mailto:kareem@example.com">kareemsk00p@gmail.com</a>
+            </div>
+          </div>
+          <div class="info-item">
+            <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <span>Location</span>
+              <p>Hyderabad, India</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="social-connect">
+          <span>Connect:</span>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper animate-right">
+        <form class="holo-form">
+          <div class="form-header">
+            <span>// SEND_MESSAGE_PROTOCOL</span>
+            <div class="dots">
+              <div class="dot red"></div>
+              <div class="dot yellow"></div>
+              <div class="dot green"></div>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <input type="text" id="name" required autocomplete="off">
+            <label for="name">Your Name</label>
+            <div class="bar"></div>
+          </div>
+
+          <div class="input-group">
+            <input type="email" id="email" required autocomplete="off">
+            <label for="email">Email Address</label>
+            <div class="bar"></div>
+          </div>
+
+          <div class="input-group">
+            <textarea id="message" required rows="4"></textarea>
+            <label for="message">Your Message</label>
+            <div class="bar"></div>
+          </div>
+
+          <button type="submit" class="btn-submit">
+            <span class="btn-text">TRANSMIT DATA</span>
+            <i class="fas fa-paper-plane"></i>
+            <div class="btn-glitch"></div>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="contact.js"></script>
+</body>
+</html>

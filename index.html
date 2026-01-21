@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kareem Basha's Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="cursor-dot"></div>
+  <div class="cursor-outline"></div>
+  
+  <div id="tooltip" class="custom-tooltip"></div>
+  
+  <nav class="navbar">
+    <div class="nav-container">
+      <ul class="nav-list">
+        <li><a class="nav-link active" href="#home">Home</a></li>
+        <li><a class="nav-link" href="aboutMe.html">AboutMe</a></li>
+        <li><a class="nav-link" href="skills.html">Skills</a></li>
+        <li><a class="nav-link" href="projects.html">Projects</a></li>
+         <li><a class="nav-link active" href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="scroll-indicator"></div>
+
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="cyber-overlay"></div>
+      <canvas id="topo-canvas"></canvas>
+    </div>
+
+    <div class="hero-inner">
+      <div class="glass-card tilt-element">
+        <span class="small-tag fade-in-up" style="animation-delay: 0.1s;">PORTFOLIO • 2026</span>
+        <h1 class="typewriter fade-in-up" style="animation-delay: 0.2s;">
+          <span class="static-text">I am&nbsp;</span>
+          <span class="typing-text"></span>
+          <span class="cursor"></span>
+        </h1>
+        <p class="hero-desc fade-in-up" style="animation-delay: 0.3s;">
+          Crafting digital experiences with clean logic and bold visuals.
+        </p>
+        <div class="hero-buttons fade-in-up" style="animation-delay: 0.4s;">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#about" class="btn-ghost">Contact Us</a>
+        </div>
+        <div class="socials fade-in-up" style="animation-delay: 0.5s;">
+          <span class="social-label">Find me online</span>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/share/1DEs7EZHPR/" class="social-icon facebook" target="_blank" rel="noopener">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/shaik_kareem__18?igsh=MXhycG14Y2luc2hwNw==" class="social-icon instagram" target="_blank" rel="noopener">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://github.com/kareem123-d" class="social-icon github" target="_blank" rel="noopener">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.hackerrank.com/profile/kareemsk00p" class="social-icon hackerrank" target="_blank" rel="noopener">
+              <i class="fa-solid fa-code"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/shaik-kareem-basha-b9b174293" class="social-icon linkedin" target="_blank" rel="noopener">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="reveal"></section>
+  <section id="skills" class="reveal"></section>
+  <section id="projects" class="reveal"></section>
+
+  <script src="main.js"></script>
+</body>
+</html>
