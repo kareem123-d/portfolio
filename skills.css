@@ -180,3 +180,128 @@ body {
   .cursor-dot, .cursor-outline { display: none; }
   * { cursor: auto; }
 }
+@media (max-width: 480px) {
+
+  .main-container {
+    padding: 80px 14px 40px;
+  }
+
+  .header-section h1 {
+    font-size: 1.8rem;
+  }
+
+  .sub-tag {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+  }
+
+  .projector-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .holo-emitter {
+    height: 180px;
+  }
+
+  .base-plate {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hologram i {
+    font-size: 2.4rem;
+  }
+
+  .hologram h3 {
+    font-size: 0.9rem;
+  }
+
+  .stat-float {
+    font-size: 1rem;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .nav-container {
+    justify-content: center;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+  }
+
+  .nav-link {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+  }
+
+  .header-section h1 {
+    font-size: 2.2rem;
+  }
+
+  .projector-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .holo-emitter {
+    height: 200px;
+  }
+  .holo-emitter:hover .beam,
+  .holo-emitter:hover .data-ring {
+    opacity: 0;
+  }
+  .cursor-dot,
+  .cursor-outline {
+    display: none;
+  }
+
+  * {
+    cursor: auto !important;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .main-container {
+    padding: 100px 30px 60px;
+  }
+
+  .header-section h1 {
+    font-size: 2.6rem;
+  }
+
+  .projector-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .holo-emitter {
+    height: 210px;
+  }
+
+  .base-plate {
+    width: 90px;
+    height: 90px;
+  }
+}
+@media (min-width: 1441px) {
+
+  .main-container {
+    max-width: 1400px;
+  }
+
+  .header-section h1 {
+    font-size: 3.4rem;
+  }
+
+  .holo-emitter {
+    height: 240px;
+  }
+
+  .base-plate {
+    width: 110px;
+    height: 110px;
+  }
+}

@@ -163,3 +163,148 @@ body { background: #020617; color: #fff; font-family: 'Segoe UI', sans-serif; ov
   .title { font-size: 2.5rem; }
   .info-item { justify-content: flex-start; }
 }
+@media (max-width: 480px) {
+
+  * {
+    cursor: auto !important;
+  }
+
+  .cursor-dot,
+  .cursor-outline {
+    display: none;
+  }
+
+  .nav-container {
+    justify-content: center;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .nav-link {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+  .contact-wrapper {
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 0 14px;
+  }
+
+  .subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+  }
+
+  .title {
+    font-size: 1.9rem;
+    line-height: 1.2;
+  }
+
+  .desc {
+    font-size: 0.95rem;
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .info-items {
+    gap: 18px;
+    margin-bottom: 30px;
+  }
+
+  .icon-box {
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+  }
+
+  .info-item a,
+  .info-item p {
+    font-size: 0.95rem;
+  }
+
+  .social-connect {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .holo-form {
+    padding: 24px;
+  }
+
+  .form-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+}
+@media (max-width: 768px) {
+
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .desc {
+    font-size: 1rem;
+  }
+
+  .holo-form {
+    padding: 32px;
+  }
+
+  .input-group input,
+  .input-group textarea {
+    font-size: 0.95rem;
+  }
+
+  .btn-submit {
+    padding: 14px;
+    font-size: 0.95rem;
+  }
+
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+
+  .contact-container {
+    gap: 50px;
+    padding: 0 30px;
+  }
+
+  .title {
+    font-size: 2.8rem;
+  }
+
+  .desc {
+    font-size: 1.05rem;
+  }
+
+  .holo-form {
+    padding: 36px;
+  }
+
+}
+@media (min-width: 1025px) and (max-width: 1440px) {
+
+  .title {
+    font-size: 3.2rem;
+  }
+
+  .contact-container {
+    gap: 60px;
+  }
+
+}
